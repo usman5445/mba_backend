@@ -9,16 +9,16 @@ const Payment = require('./models/payment.model')
 module.exports = async ()=>{
     try{
 
-        await User.collection.drop();
-        console.log("#### User collection dropped ####");
-        await Movie.collection.drop();
-        console.log("#### Movie collection dropped ####");
-        await Theatre.collection.drop();
-        console.log("#### Theatre collection dropped ####");
-        await Booking.collection.drop();
-        console.log("Booking collection dropped ");
-        await Payment.collection.drop();
-        console.log("#### Payment collection dropped ####");
+        // await User.collection.drop();
+        // console.log("#### User collection dropped ####");
+        // await Movie.collection.drop();
+        // console.log("#### Movie collection dropped ####");
+        // await Theatre.collection.drop();
+        // console.log("#### Theatre collection dropped ####");
+        // await Booking.collection.drop();
+        // console.log("Booking collection dropped ");
+        // await Payment.collection.drop();
+        // console.log("#### Payment collection dropped ####");
 
         await User.create({
             name : "Dharmit",
@@ -114,7 +114,7 @@ module.exports = async ()=>{
             trailerUrls : ["TrailerURL"],
             posterUrls : ["PosterURL"],
             languages : ["English","Hindi"],
-            releaseDate : 2022-09-09,
+            releaseDate : "2022-09-09",
             releaseStatus : constants.movieReleaseStatuses.coming_soon,
             imdbRating : 8.5,
             genre : [constants.movieGenre.action]
