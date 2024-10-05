@@ -18,6 +18,7 @@ const verifyToken = (req,res,next)=>{
         if(err){
             return res.status(401).send({
                 message : "UnAuthorised!"
+                error:err
             })
         }
         const user = await User.findOne({userId : decoded.id});
