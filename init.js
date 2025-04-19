@@ -9,16 +9,16 @@ const Payment = require('./models/payment.model')
 module.exports = async ()=>{
     try{
 
-        await User.collection.drop();
-        console.log("#### User collection dropped ####");
-        await Movie.collection.drop();
-        console.log("#### Movie collection dropped ####");
-        await Theatre.collection.drop();
-        console.log("#### Theatre collection dropped ####");
-        await Booking.collection.drop();
-        console.log("Booking collection dropped ");
-        await Payment.collection.drop();
-        console.log("#### Payment collection dropped ####");
+        // await User.collection.drop();
+        // console.log("#### User collection dropped ####");
+        // await Movie.collection.drop();
+        // console.log("#### Movie collection dropped ####");
+        // await Theatre.collection.drop();
+        // console.log("#### Theatre collection dropped ####");
+        // await Booking.collection.drop();
+        // console.log("Booking collection dropped ");
+        // await Payment.collection.drop();
+        // console.log("#### Payment collection dropped ####");
 
         await User.create({
             name : "Usman",
