@@ -9,22 +9,22 @@ const Payment = require('./models/payment.model')
 module.exports = async ()=>{
     try{
 
-        // await User.collection.drop();
-        // console.log("#### User collection dropped ####");
-        // await Movie.collection.drop();
-        // console.log("#### Movie collection dropped ####");
-        // await Theatre.collection.drop();
-        // console.log("#### Theatre collection dropped ####");
-        // await Booking.collection.drop();
-        // console.log("Booking collection dropped ");
-        // await Payment.collection.drop();
-        // console.log("#### Payment collection dropped ####");
+        await User.collection.drop();
+        console.log("#### User collection dropped ####");
+        await Movie.collection.drop();
+        console.log("#### Movie collection dropped ####");
+        await Theatre.collection.drop();
+        console.log("#### Theatre collection dropped ####");
+        await Booking.collection.drop();
+        console.log("Booking collection dropped ");
+        await Payment.collection.drop();
+        console.log("#### Payment collection dropped ####");
 
         await User.create({
-            name : "Dharmit",
+            name : "Usman",
             userId : "admin",
             password : bcrypt.hashSync("AdminOfTheApp@123",8),
-            email : "dharmit@admin.com",
+            email : "usman@admin.com",
             userType : constants.userTypes.admin
         });
 
@@ -33,10 +33,10 @@ module.exports = async ()=>{
 
         const users = [];
         users[0] = {
-            name : "Dharmit Customer",
+            name : "Usman Customer",
             userId : "customer1",
             password : bcrypt.hashSync("Customer@1",8),
-            email : "dharmit@customer.com",
+            email : "usman@customer.com",
             userType : constants.userTypes.customer
         },
         users[1] = {
@@ -96,40 +96,40 @@ module.exports = async ()=>{
 
         const movies = [];
         movies[0] = {
-            name : "Movie 1",
-            description : "Description for movie 1",
-            casts : ["SomeOne", "SomeOneElse"],
-            trailerUrls : ["TrailerURL"],
-            posterUrls : ["PosterURL"],
-            languages : ["English","Hindi"],
-            releaseDate : 2022-10-10,
-            releaseStatus : constants.movieReleaseStatuses.coming_soon,
-            imdbRating : 8.5,
-            genre : [constants.movieGenre.action]
+            name: "Inception",
+            description: "A thief who steals corporate secrets through dream-sharing faces his biggest challenge yet.",
+            casts: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+            trailerUrls: ["https://youtu.be/YoHD9XEInc0"],
+            posterUrls: ["https://example.com/inception/poster.jpg"],
+            languages: ["English", "French"],
+            releaseDate: "2010-07-16",
+            releaseStatus: constants.movieReleaseStatuses.released,
+            imdbRating: 8.8,
+            genre: [constants.movieGenre.action, constants.movieGenre.sci_fi]
         },
         movies[1] = {
-            name : "Movie 2",
-            description : "Description for movie 2",
-            casts : ["SomeOne", "SomeOneElse"],
-            trailerUrls : ["TrailerURL"],
-            posterUrls : ["PosterURL"],
-            languages : ["English","Hindi"],
-            releaseDate : "2022-09-09",
-            releaseStatus : constants.movieReleaseStatuses.coming_soon,
-            imdbRating : 8.5,
-            genre : [constants.movieGenre.action]
+            name: "The Dark Knight",
+            description: "Batman battles the Joker, a criminal mastermind who tests his moral limits.",
+            casts: ["Christian Bale", "Heath Ledger", "Gary Oldman"],
+            trailerUrls: ["https://youtu.be/EXeTwQWrcwY"],
+            posterUrls: ["https://example.com/darkknight/poster.jpg"],
+            languages: ["English"],
+            releaseDate: "2008-07-18",
+            releaseStatus: constants.movieReleaseStatuses.released,
+            imdbRating: 9.0,
+            genre: [constants.movieGenre.action]
         },
         movies[2] = {
-        name : "Movie 3",
-        description : "Description for movie 3",
-        casts : ["SomeOne", "SomeOneElse"],
-        trailerUrls : ["TrailerURL"],
-        posterUrls : ["PosterURL"],
-        languages : ["English","Hindi"],
-        releaseDate : 2022-12-12,
-        releaseStatus : constants.movieReleaseStatuses.coming_soon,
-        imdbRating : 8.5,
-        genre : [constants.movieGenre.action]
+            name: "Interstellar",
+            description: "A team of explorers travels through a wormhole in search of a new home for humanity.",
+            casts: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
+            trailerUrls: ["https://youtu.be/zSWdZVtXT7E"],
+            posterUrls: ["https://example.com/interstellar/poster.jpg"],
+            languages: ["English"],
+            releaseDate: "2014-11-07",
+            releaseStatus: constants.movieReleaseStatuses.released,
+            imdbRating: 8.6,
+            genre: [constants.movieGenre.sci_fi, constants.movieGenre.adventure]
         }
 
         moviesCreated = await Movie.insertMany(movies);
